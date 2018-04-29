@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Card, { CardContent, CardMedia, } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
-import Divider from 'material-ui/Divider';
+
 
 
 const styles = {
@@ -57,7 +57,7 @@ function Cards(props) {
           <Typography component="p" align="left">
             {store.Subheading}
           </Typography>
-          <Divider light={false}/>
+          <hr/>
           <Typography variant="title" gutterBottom className={classes.fontText} align="right">
            {"$" + store.Price}
          </Typography>
