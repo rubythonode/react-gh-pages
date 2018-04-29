@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Cards from './Cards';
 import './App.css';
-
+import {Grid} from 'material-ui';
 var store = [
     {
         "Heading": "tempor do tempor",
@@ -67,9 +67,24 @@ var store = [
     }
   ];
 
+  
+
+  function orderByProperty(prop) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return function (a, b) {
+      var equality = a[prop] - b[prop];
+      if (equality === 0 && arguments.length > 1) {
+        return orderByProperty.apply(null, args)(a, b);
+      }
+      return equality;
+    };
+  };
+  
+  
+
 var styles = {
     container : {
-        margin : '40px'
+        padding: '30px'
       }
 }
 
@@ -86,15 +101,18 @@ var styles = {
         this.setState({
           store: store
         });
+        store.sort(orderByProperty('Price'));
       }
         render(){
             return(
                 <div style = {styles.container}>
+                <Grid container>
                     {
                         Object
                         .keys(this.state.store)
                         .map(key => <Cards key={key} index={key} store={this.state.store[key]}/>)
-                    }           
+                    }    
+                  </Grid>         
                 </div>         
             );
         }

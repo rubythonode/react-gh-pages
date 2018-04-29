@@ -5,7 +5,7 @@ export default class Header extends  Component{
         return(
             <div className="App">
             <header className="App-header">
-            <h1 className="App-title">Welcome </h1>
+            <h1 className="App-title">Cox Automotive</h1>
             </header>
             </div>
         );

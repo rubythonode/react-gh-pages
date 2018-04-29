@@ -9,8 +9,11 @@ import Divider from 'material-ui/Divider';
 const styles = {
   card: {
     maxWidth: 300,
-    margin: '30px 20px',
+    margin: '20px 20px',
     borderRadius: '5px',
+    display: 'inline-block',
+    height: 375,
+    minWidth: 300,
   },
   media: {
     height: 0,
@@ -20,9 +23,11 @@ const styles = {
     color: '#40e0d0',
   },
   overlayImage: {
-    padding: '2px'
-   
-  }
+    height: 0,
+    paddingTop: '56.25%',
+    margin: '10px'
+  },
+
 };
 
 function Cards(props) {
